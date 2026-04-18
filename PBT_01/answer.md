@@ -16,4 +16,7 @@ Câu A2:
 4: Sử dụng div class="product" và div class="title" thay vì thẻ article và heading(h1/h2/h3/). Sửa: thay bằng thẻ article và heading.
 5: Sử dụng div class="footer" thay vì thẻ footer. Sửa: thay bằng thẻ footer.
 
+Câu A3:
+Vì mỗi div sẽ tạo một dòng riêng (Hộp 1/2/3). Các span và strong nằm cạnh nhau trên cùng một dòng vì giữa chúng là khoảng cách và không tạo ra dòng riêng như div (Text A Text B; Text C Text D).
+
 
