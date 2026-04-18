@@ -27,3 +27,17 @@ Lý do vì sao không nên dùng table để tạo trang web:
 1. Các thẻ <table> được thiết kế chỉ để hiển thị dữ liệu dạng bảng, không phù hợp để tạo bố cục trang web.
 2. Sử dụng <table> để tạo bố cục trang web sẽ làm cho mã HTML trở nên phức tạp và khó bảo trì, vì bạn sẽ phải lồng nhiều bảng vào nhau để đạt được bố cục mong muốn.
 3. Sử dụng <table> để tạo bố cục trang web sẽ làm cho trang web trở nên kém linh hoạt và khó thích ứng với các kích thước màn hình khác nhau, đặc biệt là trên thiết bị di động.
+
+Câu B3:
+Lỗi 1: Dòng 1 — Thẻ DOCTYPE sai (<!DOCTYPE>) — Cách sửa: đổi thành <!DOCTYPE html>.
+Lỗi 2: Dòng 2 — Thiếu thuộc tính ngôn ngữ trên thẻ html (<html>) — Cách sửa: thêm lang, ví dụ <html lang="vi">.
+Lỗi 3: Dòng 4 — Thẻ <title> không đóng — Cách sửa: đóng thẻ bằng </title> (và đặt meta charset trước title).
+Lỗi 4: Dòng 5 — Giá trị charset sai ('utf8') — Cách sửa: dùng <meta charset="utf-8">.
+Lỗi 5: Dòng 8 — Thẻ <h1> đóng sai (dùng <h1> thay vì </h1>) — Cách sửa: đổi thành </h1>.
+Lỗi 6: Dòng 12 — Thẻ <a> không đóng (<a href="home">Trang chủ<a>) — Cách sửa: đóng bằng </a>.
+Lỗi 7: Dòng 20 — Thuộc tính src của <img> không có dấu ngoặc kép và thiếu alt (src=iphone.jpg) — Cách sửa: <img src="iphone.jpg" alt="Ảnh iPhone 16 Pro">.
+Lỗi 8: Dòng 22 — Sai thứ tự đóng thẻ (nesting): <p>Giá: <b>25.990.000đ</p></b> — Cách sửa: đóng đúng thứ tự, ví dụ <p>Giá: <b>25.990.000đ</b></p> (hoặc dùng <strong>).
+Lỗi 9: Dòng 27-31 — Hàng header của bảng dùng <td> thay vì <th> và thiếu <thead>/<tbody> — Cách sửa: dùng <thead><tr><th>...</th></tr></thead> và phần dữ liệu trong <tbody>.
+Lỗi 10: Dòng 40 — Dùng hai thẻ <main> (không hợp lệ về semantic) — Cách sửa: đổi thẻ thứ hai thành <aside> hoặc <section>.
+Lỗi 11: Dòng 45 — Thẻ <p> trong footer không đóng — Cách sửa: thêm </p>.
+Lỗi 12: Dòng 47 — Thiếu thẻ đóng </html> cuối file — Cách sửa: thêm </html> ở cuối.
