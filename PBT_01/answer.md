@@ -49,4 +49,12 @@ Method: GET.
 Input type: Text, Button.
 
 
+Câu C2:
 
+Dùng <div> cho mọi thứ có vẻ nhanh nhưng là lựa chọn tệ về kỹ thuật. Thứ nhất — SEO(Search Engine Optimization): các công cụ tìm kiếm dựa vào cấu trúc semantic (ví dụ <header>, <nav>, <main>, <article>, <h1>/<h2>) để hiểu ngữ cảnh nội dung; một trang có heading và article rõ ràng dễ được index đúng, có khả năng hiển thị rich snippet (tiêu đề, mô tả, ảnh) cao hơn so với toàn bộ div vô nghĩa. Thứ hai — Accessibility: trình đọc màn hình và công cụ hỗ trợ dựa vào landmark và cấu trúc heading để điều hướng nhanh (ví dụ “jump to main”, liệt kê các heading hay nav); Ngoài ra, semantic giúp bảo trì — khi nhìn vào DOM, lập trình viên và công cụ kiểm thử hiểu ngay chức năng từng vùng, giảm lỗi.
+
+Ví dụ cụ thể: một trang blog dùng <article><h1>Tiêu đề</h1><figure><img alt="..."><figcaption>Chú thích</figcaption></figure> sẽ cho phép trình đọc màn hình đọc tiêu đề/chú thích đúng thứ tự và giúp web trích dẫn đúng tiêu đề + ảnh vào snippet; trong khi nếu mọi thứ là <div class="post-title"> thì yêu cầu người đọc hoặc người bảo trì phải “đoán” ý nghĩa từ tên class, hiệu suất sẽ thấp hơn.
+
+Trường hợp <div> vẫn phù hợp: khi chỉ cần container thuần trình bày (layout grid, wrapper vô nghĩa về mặt nội dung) hoặc khi làm element tạm thời/thuần JS mà không mang ý nghĩa ngữ nghĩa. 
+
+Tổng kết: semantic không tốn thời gian vô ích — nó đầu tư cho SEO, accessibility và bảo trì dài hạn.
