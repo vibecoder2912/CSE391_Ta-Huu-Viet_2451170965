@@ -7,3 +7,13 @@ Câu A1:
     6. → Chrome nhận file HTML, CSS, JS → render ra giao diện → Minh thấy Dashboard
 
 2: Nằm trong thư mục Screenshot
+
+
+Câu A2:
+1: Sử dụng div class="header" thay vì header. Sửa: thay bằng thẻ header.
+2: Sử dụng div class="menu" thay vì thẻ nav. Sửa: sử dụng nav + ul/li.
+3: Sử dụng div class="main" thay vì thẻ main. Sửa: thay bằng thẻ main.
+4: Sử dụng div class="product" và div class="title" thay vì thẻ article và heading(h1/h2/h3/). Sửa: thay bằng thẻ article và heading.
+5: Sử dụng div class="footer" thay vì thẻ footer. Sửa: thay bằng thẻ footer.
+
+
