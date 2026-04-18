@@ -19,4 +19,11 @@ Câu A2:
 Câu A3:
 Vì mỗi div sẽ tạo một dòng riêng (Hộp 1/2/3). Các span và strong nằm cạnh nhau trên cùng một dòng vì giữa chúng là khoảng cách và không tạo ra dòng riêng như div (Text A Text B; Text C Text D).
 
-
+Câu A4:
+<thead>: Chứa hàng tiêu đề cột (th), dùng để mô tả từng cột.
+<tbody>: Chứa các hàng dữ liệu chính (td); có thể có nhiều <tbody> để nhóm nhiều mặt hàng.
+<tfoot>: Chứa hàng tóm tắt/tổng kết(ví dụ totals);
+Lý do vì sao không nên dùng table để tạo trang web:
+1. Các thẻ <table> được thiết kế chỉ để hiển thị dữ liệu dạng bảng, không phù hợp để tạo bố cục trang web.
+2. Sử dụng <table> để tạo bố cục trang web sẽ làm cho mã HTML trở nên phức tạp và khó bảo trì, vì bạn sẽ phải lồng nhiều bảng vào nhau để đạt được bố cục mong muốn.
+3. Sử dụng <table> để tạo bố cục trang web sẽ làm cho trang web trở nên kém linh hoạt và khó thích ứng với các kích thước màn hình khác nhau, đặc biệt là trên thiết bị di động.
