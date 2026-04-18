@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="vi"> <!-- html: root element với lang để SEO và trợ năng -->
+<head> <!-- head: metadata tài liệu (không hiển thị trực tiếp) -->
+  <meta charset="utf-8"> <!-- meta charset: đảm bảo mã hóa ký tự đúng -->
+  <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- responsive trên mobile -->
+  <title>Chi tiết sản phẩm — iPhone 16</title> <!-- title: tiêu đề trang cho SEO/UA -->
+</head>
+<body> <!-- body: phần nội dung hiển thị -->
+
+  <header> <!-- header: phần đầu trang, chứa nhận diện và điều hướng chính -->
+    <h1>ShopTLU</h1> <!-- h1: tiêu đề chính -->
+    <nav aria-label="Primary navigation"> <!-- nav: chứa liên kết điều hướng chính -->
+      <ul> <!-- ul: danh sách điều hướng -->
+        <li><a href="/">Trang chủ</a></li> <!-- li/a: link điều hướng -->
+        <li><a href="/dienthoai">Điện thoại</a></li>
+        <li><a href="/lien-he">Liên hệ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main> <!-- main: phần nội dung chính của trang (mỗi trang chỉ có 1 main) -->
+
+    <nav aria-label="Breadcrumb"> <!-- nav breadcrumb: điều hướng thứ tự (aria cho trợ năng) -->
+      <ol> <!-- ol: breadcrumb có thứ tự -->
+        <li><a href="/">Trang chủ</a></li>
+        <li><a href="/dienthoai">Điện thoại</a></li>
+        <li aria-current="page">iPhone 16</li> <!-- aria-current: vị trí hiện tại -->
+      </ol>
+    </nav>
+
+    <section class="product-detail" aria-labelledby="product-title"> <!-- section: nhóm nội dung liên quan đến sản phẩm -->
+      <div class="layout"> <!-- wrapper layout: phân chia vùng ảnh và thông tin (sử dụng class cho CSS layout) -->
+        <aside class="gallery" aria-label="Hình ảnh sản phẩm"> <!-- aside: khu vực phụ cho gallery (có thể coi là nội dung hỗ trợ) -->
+          <figure> <!-- figure: nhóm ảnh chính + chú thích -->
+            <img src="images/iphone-main.jpg" alt="iPhone 16 — ảnh chính" loading="lazy"> <!-- img: ảnh chính, alt cho trợ năng -->
+            <figcaption>iPhone 16 — Màu Titan</figcaption> <!-- figcaption: chú thích ảnh -->
+          </figure>
+
+          <ul class="thumbnails"> <!-- ul: danh sách ảnh phụ/thumbnail -->
+            <li><img src="images/iphone-1.jpg" alt="iPhone 16 ảnh 1" loading="lazy"></li>
+            <li><img src="images/iphone-2.jpg" alt="iPhone 16 ảnh 2" loading="lazy"></li>
+            <li><img src="images/iphone-3.jpg" alt="iPhone 16 ảnh 3" loading="lazy"></li>
+            <li><img src="images/iphone-4.jpg" alt="iPhone 16 ảnh 4" loading="lazy"></li>
+          </ul>
+        </aside>
+
+        <article class="product-info" id="product-title"> <!-- article: nội dung có thể độc lập (thông tin sản phẩm) -->
+          <h2>iPhone 16</h2> <!-- h2: tiêu đề sản phẩm (h1 đã dùng cho brand) -->
+          <p class="price"><strong>25.990.000₫</strong></p> <!-- p + strong: giá quan trọng, strong nhấn mạnh cho SEO/AT -->
+          <div class="rating" role="img" aria-label="Đánh giá 4.5 trên 5"> <!-- div với role/img để mô tả rating cho trợ năng -->
+            <!-- hiển thị sao (UI) -->
+            <span>★★★★☆ (4.5)</span>
+          </div>
+
+          <section class="short-desc"> <!-- section: mô tả ngắn về sản phẩm -->
+            <h3>Mô tả ngắn</h3>
+            <p>Chip A18, Camera 48MP, Pin lớn — mô tả tóm tắt.</p>
+          </section>
+
+          <nav class="purchase-actions" aria-label="Hành động mua hàng"> <!-- nav: nhóm hành động liên quan (mua, thêm giỏ) -->
+            <button type="button">Mua ngay</button>
+            <button type="button">Thêm vào giỏ</button>
+          </nav>
+        </article>
+      </div>
+    </section>
+
+    <section class="specs" aria-labelledby="specs-title"> <!-- section: thông số kỹ thuật -->
+      <h3 id="specs-title">Thông số kỹ thuật</h3>
+      <table> <!-- table: hiển thị dữ liệu có cấu trúc key/value -->
+        <caption>Bảng thông số kỹ thuật của sản phẩm</caption> <!-- caption: mô tả ngắn cho table -->
+        <thead> <!-- thead: header của bảng -->
+          <tr>
+            <th>Thông số</th>
+            <th>Chi tiết</th>
+          </tr>
+        </thead>
+        <tbody> <!-- tbody: phần dữ liệu chính -->
+          <tr>
+            <td>Chip</td>
+            <td>A18</td>
+          </tr>
+          <tr>
+            <td>Camera</td>
+            <td>48 MP</td>
+          </tr>
+        </tbody>
+        <tfoot> <!-- tfoot: tổng hợp hoặc chú thích (tùy ý) -->
+          <tr>
+            <td colspan="2">Bảo hành 12 tháng</td>
+          </tr>
+        </tfoot>
+      </table>
+    </section>
+
+    <section class="reviews" aria-labelledby="reviews-title"> <!-- section: khu vực đánh giá và bình luận -->
+      <h3 id="reviews-title">Đánh giá & Bình luận</h3>
+
+      <form action="/reviews" method="post" class="review-form" aria-label="Gửi đánh giá sản phẩm"> <!-- form: gửi đánh giá, có action/method để submit -->
+        <fieldset> <!-- fieldset: nhóm trường liên quan -->
+          <legend>Viết đánh giá</legend> <!-- legend: tiêu đề nhóm form -->
+          <label for="rating">Đánh giá</label>
+          <select id="rating" name="rating" required> <!-- select: chọn điểm sao -->
+            <option value="">Chọn</option>
+            <option value="5">5</option>
+            <option value="4">4</option>
+            <option value="3">3</option>
+            <option value="2">2</option>
+            <option value="1">1</option>
+          </select>
+
+          <label for="comment">Bình luận</label>
+          <textarea id="comment" name="comment" rows="4" required></textarea>
+
+          <button type="submit">Gửi đánh giá</button>
+        </fieldset>
+      </form>
+
+      <ul class="review-list"> <!-- ul: danh sách các review -->
+        <li>
+          <article class="review"> <!-- article: mỗi đánh giá là một nội dung độc lập -->
+            <h4>Người dùng A</h4>
+            <p>★★★★★</p>
+            <p>Rất hài lòng với sản phẩm.</p>
+            <time datetime="2026-04-18">18 Tháng 4, 2026</time> <!-- time: thời điểm review -->
+          </article>
+        </li>
+      </ul>
+    </section>
+
+    <aside class="related-products" aria-labelledby="related-title"> <!-- aside: nội dung phụ, sản phẩm tương tự -->
+      <h3 id="related-title">Sản phẩm tương tự</h3>
+      <ul>
+        <li>
+          <article>
+            <img src="images/phone-similar-1.jpg" alt="Sản phẩm tương tự 1" loading="lazy">
+            <h4><a href="/product/101">iPhone 13 Pro Max</a></h4>
+            <p><strong>20.990.000₫</strong></p>
+          </article>
+        </li>
+        <!-- thêm item tương tự -->
+      </ul>
+    </aside>
+
+  </main>
+
+  <footer> <!-- footer: thông tin bản quyền và liên kết phụ -->
+    <nav aria-label="Footer navigation"> <!-- nav footer: liên kết chính sách/giúp đỡ -->
+      <ul>
+        <li><a href="/chinh-sach">Chính sách</a></li>
+        <li><a href="/lien-he">Liên hệ</a></li>
+        <li><a href="/faq">FAQ</a></li>
+      </ul>
+    </nav>
+    <p>&copy; 2026 ShopTLU</p>
+  </footer>
+
+</body>
+</html>
