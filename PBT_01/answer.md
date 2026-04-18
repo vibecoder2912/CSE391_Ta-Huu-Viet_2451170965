@@ -41,3 +41,12 @@ Lỗi 9: Dòng 27-31 — Hàng header của bảng dùng <td> thay vì <th> và 
 Lỗi 10: Dòng 40 — Dùng hai thẻ <main> (không hợp lệ về semantic) — Cách sửa: đổi thẻ thứ hai thành <aside> hoặc <section>.
 Lỗi 11: Dòng 45 — Thẻ <p> trong footer không đóng — Cách sửa: thêm </p>.
 Lỗi 12: Dòng 47 — Thiếu thẻ đóng </html> cuối file — Cách sửa: thêm </html> ở cuối.
+
+Câu B4:
+3:
+Action: Bấm vào nút tìm kiếm trên trang chủ Shopee.
+Method: GET.
+Input type: Text, Button.
+
+
+
