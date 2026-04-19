@@ -58,3 +58,5 @@ Ví dụ cụ thể: một trang blog dùng <article><h1>Tiêu đề</h1><figure
 Trường hợp <div> vẫn phù hợp: khi chỉ cần container thuần trình bày (layout grid, wrapper vô nghĩa về mặt nội dung) hoặc khi làm element tạm thời/thuần JS mà không mang ý nghĩa ngữ nghĩa. 
 
 Tổng kết: semantic không tốn thời gian vô ích — nó đầu tư cho SEO, accessibility và bảo trì dài hạn.
+
+D: link video: https://youtu.be/73qNut1Shw4;
