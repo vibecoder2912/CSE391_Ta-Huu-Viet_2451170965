@@ -59,4 +59,4 @@ Trường hợp <div> vẫn phù hợp: khi chỉ cần container thuần trình
 
 Tổng kết: semantic không tốn thời gian vô ích — nó đầu tư cho SEO, accessibility và bảo trì dài hạn.
 
-D: link video: https://youtu.be/73qNut1Shw4;
+D: link video: https://youtu.be/asH7mj11ZXo;
