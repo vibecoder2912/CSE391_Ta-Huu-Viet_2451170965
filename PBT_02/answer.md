@@ -69,3 +69,22 @@ Khi dùng aria-label: cho control không có nhãn nhìn thấy (icon-only butto
 Tại sao không dùng khi đã có label: aria-label sẽ override (ghi đè) tên truy cập do label cung cấp, tạo thông tin trùng lặp.
 Thay thế tốt hơn: nếu cần tên truy cập từ một phần tử khác, dùng aria-labelledby tham chiếu tới id của label.
 
+A4:
+1:
+Ý nghĩa loading="lazy" trên <img>
+Hoạt động: trì hoãn tải ảnh cho tới khi image gần/cần hiển thị trên viewport (intersection observer nội bộ của browser).
+Cải thiện: giảm băng thông ban đầu, giảm thời gian tải trang (LCP) và cải thiện trải nghiệm trên mạng chậm, tiết kiệm dữ liệu cho mobile.
+Khi KHÔNG nên dùng: ảnh quan trọng ở trên-fold (hero, logo, ảnh ngay đầu trang) vì lazy có thể làm chậm hiển thị; nội dung cần preload để tránh nhảy layout; khi cần analytics chính xác về load ordering; với <img> trong carousels mà browser không hỗ trợ scroll-based lazy tốt.
+
+2:
+Tại sao cung cấp nhiều <source> trong <video> + 3 format phổ biến
+Lý do: trình duyệt khác nhau hỗ trợ codec/container khác nhau; cung cấp nhiều source tăng khả năng phát được cho tất cả client và cho phép fallback. Ngoài ra có thể cung cấp bản chất lượng/bitrate khác nhau.
+3 format phổ biến: mp4 (H.264/AAC), webm (VP9/AV1 + Opus), ogg/ogv (Theora/Vorbis).
+
+3:
+alt trên <img> — mục đích và 3 ví dụ tốt
+Mục đích: cung cấp văn bản thay thế cho người dùng screen reader hoặc khi ảnh không tải; hỗ trợ SEO và trợ năng. alt nên ngắn, mô tả chức năng/ý nghĩa ảnh (không nhắc “image of”). Với ảnh thuần trang trí, dùng alt="" để bỏ qua cho assistive tech.
+Ví dụ:
+Ảnh sản phẩm iPhone 16: alt="iPhone 16 Pro Max 256GB màu Titan — mặt trước và mặt sau"
+Ảnh trang trí (decorative): alt=""
+Ảnh biểu đồ doanh thu Q1/2026: alt="Biểu đồ cột: doanh thu Q1/2026 — Tháng 1: 1.2 tỷ, Tháng 2: 1.5 tỷ, Tháng 3: 1.8 tỷ"
