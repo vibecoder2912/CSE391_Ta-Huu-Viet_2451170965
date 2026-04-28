@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/submit-path">
+        <div>
+            <label>1. Tên (Bắt buộc):</label>
+            <input type="text" required value="">
+        </div>
+
+        <div>
+            <label>2. Email:</label>
+            <input type="email" value="abc">
+        </div>
+
+        <div>
+            <label>3. Số lượng (1-10):</label>
+            <input type="number" min="1" max="10" value="15">
+        </div>
+
+        <div>
+            <label>4. Mã số (10 chữ số):</label>
+            <input type="text" pattern="[0-9]{10}" value="abc123">
+        </div>
+
+        <div>
+            <label>5. Mật khẩu (Min 8):</label>
+            <input type="password" minlength="8" value="123">
+        </div>
+
+  <button type="submit">Submit</button>
+</form>
+</body>
+</html>

@@ -19,3 +19,28 @@ type="file" → Nút bấm mở cửa sổ trình duyệt tệp tin của thiế
 
 type="range" → Thanh trượt (slider) để chọn một giá trị trong khoảng xác định → Use case: Bộ lọc khoảng giá (Price Range) giúp khách hàng giới hạn ngân sách mua sắm.
 
+A2:
+1. Trường hợp 1:
+Kết quả: Trình duyệt sẽ ngăn không cho gửi form và hiển thị một thông báo lỗi (thường là "Please fill out this field").
+
+Tại sao: Thuộc tính required bắt buộc trường nhập liệu không được phép để trống. Vì value="" nên điều kiện này bị vi phạm.
+
+2. Trường hợp 2:
+Kết quả: Trình duyệt báo lỗi định dạng (thường là "Please include an '@' in the email address").
+
+Tại sao: type="email" yêu cầu dữ liệu phải khớp với cấu trúc email cơ bản. Chuỗi "abc" thiếu ký tự @ và phần tên miền phía sau, dẫn đến lỗi cú pháp.
+
+3. Trường hợp 3:
+Kết quả: Trình duyệt báo lỗi giá trị nằm ngoài khoảng (thường là "Value must be less than or equal to 10").
+
+Tại sao: Bạn đã thiết lập max="10", nhưng giá trị nhập vào là 15. Trình duyệt sẽ chặn lại vì giá trị này vượt quá ngưỡng tối đa cho phép.
+
+4. Trường hợp 4:
+Kết quả: Trình duyệt báo lỗi không khớp định dạng yêu cầu (thường là "Please match the requested format").
+
+Tại sao: Thuộc tính pattern="[0-9]{10}" yêu cầu đầu vào phải là đúng 10 chữ số. Chuỗi "abc123" vừa chứa chữ cái, vừa không đủ độ dài 10 ký tự nên bị từ chối.
+
+5. Trường hợp 5:
+Kết quả: Trình duyệt báo lỗi về độ dài (thường là "Please lengthen this text to 8 characters or more").
+
+Tại sao: Thuộc tính minlength="8" yêu cầu chuỗi phải có ít nhất 8 ký tự. Chuỗi "123" chỉ có 3 ký tự, do đó không vượt qua được bộ lọc bảo mật về độ dài mật khẩu.
