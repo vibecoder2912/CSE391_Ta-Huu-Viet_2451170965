@@ -88,3 +88,9 @@ Ví dụ:
 Ảnh sản phẩm iPhone 16: alt="iPhone 16 Pro Max 256GB màu Titan — mặt trước và mặt sau"
 Ảnh trang trí (decorative): alt=""
 Ảnh biểu đồ doanh thu Q1/2026: alt="Biểu đồ cột: doanh thu Q1/2026 — Tháng 1: 1.2 tỷ, Tháng 2: 1.5 tỷ, Tháng 3: 1.8 tỷ"
+
+A5:
+Trang sản phẩm chi tiết: ảnh sản phẩm lớn kèm mô tả/giá/các biến thể trong figcaption.
+Ví dụ: trang product detail hiển thị “iPhone 16 Pro Max — 25.990.000đ” trong figcaption.
+Hình minh họa có giá trị nội dung (báo cáo/infographic): ảnh kèm chú thích, nguồn dữ liệu hoặc giải thích chi tiết.
+Ví dụ: biểu đồ doanh thu có figcaption tóm tắt số liệu và nguồn.
