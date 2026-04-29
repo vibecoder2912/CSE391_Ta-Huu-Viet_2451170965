@@ -38,3 +38,18 @@ nav a:first-child → "Home"
 article > p → "25.990.000đ", "Mô tả sản phẩm...", "45.990.000đ", "Mô tả sản phẩm..."
 a[href="/"] → "Home"
 .top-bar.dark h1 → "ShopTLU"
+
+A3:
+Trường hợp 1 (content-box):
+
+Chiều rộng hiển thị = 400 + 202(padding) + 52(border) = 400 + 40 + 10 = 450px
+Không gian chiếm trên trang (bao gồm margin trái/phải) = 450 + 10*2 = 470px
+Trường hợp 2 (border-box):
+
+Chiều rộng hiển thị = width = 400px
+Kích thước content thực tế = 400 - 202(padding) - 52(border) = 400 - 40 - 10 = 350px
+Không gian chiếm trên trang (bao gồm margin) = 400 + 10*2 = 420px
+Trường hợp 3 (margin collapse):
+
+Khoảng cách giữa .box-a và .box-b = max(25, 40) = 40px — không phải 65px vì margin dọc “collapse” (gộp) lấy giá trị lớn hơn.
+Nâng cao (một margin âm): .box-a { margin-bottom: -10px } và .box-b { margin-top: 40px } → khoảng cách = 40 + (−10) = 30px (do collapse với dấu âm cộng vào).
