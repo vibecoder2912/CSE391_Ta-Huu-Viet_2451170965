@@ -122,3 +122,20 @@ Sửa:
 
 Lỗi 8: Dòng 16-18 — <label> "Tôi đồng ý điều khoản" không chứa <input type="checkbox"> hoặc không tham chiếu for, nên checkbox thiếu; cũng cần required.
 Sửa: <input type="checkbox" id="agree" name="agree" required> <label for="agree">Tôi đồng ý điều khoản</label>
+
+C2:
+Regex patterns:
+CMND/CCCD (12 chữ số): pattern="^\d{12}$"
+Số tài khoản (10–15 chữ số): pattern="^\d{10,15}$"
+HTML5 validation có đủ an toàn cho ngân hàng không? — Không.
+
+Lý do ngắn: HTML5 validation chỉ chạy phía client và dễ bị bypass (tắt JS, sửa request bằng tools). Nó chỉ kiểm tra cú pháp/format, không thay thế kiểm tra server-side, xác thực người dùng, sanitization hay cơ chế bảo mật (HTTPS, rate-limiting, logging, KYC). Luôn phải validate và xử lý an toàn ở server.
+
+Ba loại validation mà HTML5 KHÔNG THỂ làm (cần JS hoặc server):
+Cross-field/business rules: so khớp PIN/confirm, kiểm tra tuổi từ ngày sinh, logic ràng buộc nhiều trường.
+Async checks: kiểm tra email/số tài khoản đã tồn tại, gọi API KYC/third-party.
+Phức tạp/algorithmic checks: checksum, Luhn-like, phân tích độ mạnh mật khẩu theo tiêu chí tùy chỉnh.
+
+Hai rủi ro nếu chỉ validate frontend:
+Bypass & injection: attacker gửi payload độc hại trực tiếp → SQL/NoSQL injection, XSS nếu server không sanitize.
+Fraud / unauthorized actions: tạo tài khoản giả, brute-force PIN, hoặc đăng ký với dữ liệu giả mà server không kiểm tra → mất mát tài chính và vi phạm pháp lý.
