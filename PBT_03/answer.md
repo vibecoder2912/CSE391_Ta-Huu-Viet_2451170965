@@ -53,3 +53,19 @@ Trường hợp 3 (margin collapse):
 
 Khoảng cách giữa .box-a và .box-b = max(25, 40) = 40px — không phải 65px vì margin dọc “collapse” (gộp) lấy giá trị lớn hơn.
 Nâng cao (một margin âm): .box-a { margin-bottom: -10px } và .box-b { margin-top: 40px } → khoảng cách = 40 + (−10) = 30px (do collapse với dấu âm cộng vào).
+
+A4:
+1:
+Rule A p → (0,0,1)
+Rule B .price → (0,1,0)
+Rule C #main-price → (1,0,0)
+Rule D p.price → (0,1,1)
+
+2:
+Màu hiển thị: red — vì Rule C có specificity (1,0,0) cao nhất, nên thắng các rule khác.
+
+3:
+Thêm style="color: orange;" → orange (inline style wins over stylesheet rules).
+
+4:
+Nếu Rule A là p { color: black !important; } → black. Giải thích ngắn: !important trong stylesheet outrank(vượt quyền) non-!important rules (kể cả inline non-!important); giữa nhiều !important rules, specificity + source order sẽ quyết định.
