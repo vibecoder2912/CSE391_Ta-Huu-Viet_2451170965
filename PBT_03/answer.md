@@ -27,3 +27,14 @@ Khi dùng: production, multi-page sites, team projects.
 
 Nếu cùng 1 element có cả 3 cách áp dụng, cách nào "thắng"?
 Vì CSS dịch từ trên xuống dưới, nên cách sử dụng sau cùng sẽ override các cách trước đó.
+
+A2:
+
+h1 → "ShopTLU"
+.price → "25.990.000đ", "45.990.000đ"
+#app header → <header> chứa "ShopTLU" và thanh nav.
+nav a:first-child → "Home"
+.product.featured h2 → "MacBook Pro"
+article > p → "25.990.000đ", "Mô tả sản phẩm...", "45.990.000đ", "Mô tả sản phẩm..."
+a[href="/"] → "Home"
+.top-bar.dark h1 → "ShopTLU"
