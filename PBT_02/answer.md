@@ -94,3 +94,31 @@ Trang sản phẩm chi tiết: ảnh sản phẩm lớn kèm mô tả/giá/các 
 Ví dụ: trang product detail hiển thị “iPhone 16 Pro Max — 25.990.000đ” trong figcaption.
 Hình minh họa có giá trị nội dung (báo cáo/infographic): ảnh kèm chú thích, nguồn dữ liệu hoặc giải thích chi tiết.
 Ví dụ: biểu đồ doanh thu có figcaption tóm tắt số liệu và nguồn.
+
+C1:
+Lỗi 1: Dòng 1 — <form> thiếu action và method, làm form không rõ đích và phương thức gửi.
+Sửa: <form action="#" method="POST">
+
+Lỗi 2: Dòng 2 — Input "Tên" không có <label for="..."> và không có id/name/required (vi phạm accessibility và không gửi dữ liệu).
+Sửa: <label for="name">Tên:</label> <input type="text" id="name" name="name" required minlength="2" maxlength="50">
+
+Lỗi 3: Dòng 4 — type="email" thiếu id/name và required, cũng thiếu autocomplete.
+Sửa: <label for="email">Email:</label> <input type="email" id="email" name="email" required placeholder="Email của bạn" autocomplete="email">
+
+Lỗi 4: Dòng 6 — Mật khẩu đầu thiếu id/name/validation (minlength/pattern) và autocomplete nên là new-password.
+Sửa: <label for="password">Mật khẩu:</label> <input type="password" id="password" name="password" required minlength="8" pattern="(?=.*\d)(?=.*[A-Z]).{8,}" title="Ít nhất 8 ký tự, bao gồm chữ hoa và số" autocomplete="new-password">
+
+Lỗi 5: Dòng 7 — Trường "Nhập lại mật khẩu" thiếu id/name/required (HTML không tự kiểm tra khớp password), cần đặt id/name và thông báo; việc so khớp cần JS phía client/server.
+Sửa: <label for="confirm_password">Nhập lại mật khẩu:</label> <input type="password" id="confirm_password" name="confirm_password" required autocomplete="new-password">
+(Ghi chú: thêm kiểm tra khớp bằng JS và server-side validation.)
+
+Lỗi 6: Dòng 9 — Phone dùng type="text" với value tiền điền (có thể lộ dữ liệu) và thiếu name/pattern.
+Sửa: Phone: <label for="phone" class="sr-only">Số điện thoại</label> <input type="tel" id="phone" name="phone" placeholder="0901234567" pattern="[0-9]{10}" required>
+(Loại bỏ value mặc định nếu không cần.)
+
+Lỗi 7: Dòng 11 — <select> thiếu <label for="...">, name và các <option> thiếu value; thiếu tùy chọn mặc định/disabled để bắt người dùng chọn.
+Sửa:
+<label for="city">Thành phố:</label> <select id="city" name="city" required>   <option value="" disabled selected>Chọn thành phố</option>   <option value="hanoi">Hà Nội</option>   <option value="hcm">TP.HCM</option> </select>
+
+Lỗi 8: Dòng 16-18 — <label> "Tôi đồng ý điều khoản" không chứa <input type="checkbox"> hoặc không tham chiếu for, nên checkbox thiếu; cũng cần required.
+Sửa: <input type="checkbox" id="agree" name="agree" required> <label for="agree">Tôi đồng ý điều khoản</label>
