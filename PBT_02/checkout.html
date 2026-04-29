@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Thanh toán - Giỏ hàng</h1>
+
+    <label for="search">Tìm sản phẩm:</label>
+    <input list="products-list" id="search" name="search" placeholder="Nhập tên sản phẩm...">
+    <datalist id="products-list">
+        <option value="Áo thun">Áo thun</option>
+        <option value="Quần jean">Quần jean</option>
+        <option value="Giày thể thao">Giày thể thao</option>
+        <option value="Mũ lưỡi trai">Mũ lưỡi trai</option>
+    </datalist>
+
+    <section aria-labelledby="cart-heading">
+        <h2 id="cart-heading">Giỏ hàng</h2>
+        <table border="1" cellpadding="6" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>STT</th>
+                    <th>Sản phẩm</th>
+                    <th>Đơn giá</th>
+                    <th>Số lượng</th>
+                    <th>Thành tiền</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Áo thun</td>
+                    <td>150.000 ₫</td>
+                    <td>2</td>
+                    <td>300.000 ₫</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Quần jean</td>
+                    <td>400.000 ₫</td>
+                    <td>1</td>
+                    <td>400.000 ₫</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Giày thể thao</td>
+                    <td>800.000 ₫</td>
+                    <td>1</td>
+                    <td>800.000 ₫</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="4">Tổng cộng</td>
+                    <td><output id="total">1.500.000 ₫</output></td>
+                </tr>
+            </tfoot>
+        </table>
+    </section>
+
+    <section aria-labelledby="payment-heading">
+        <h2 id="payment-heading">Thanh toán</h2>
+        <form id="checkout-form">
+            <fieldset>
+                <legend>Phương thức thanh toán</legend>
+                <label><input type="radio" name="payment" value="cod" checked> COD</label>
+                <label><input type="radio" name="payment" value="bank"> Chuyển khoản</label>
+                <label><input type="radio" name="payment" value="e-wallet"> Ví điện tử</label>
+            </fieldset>
+
+            <label for="coupon">Mã giảm giá:</label>
+            <input type="text" id="coupon" name="coupon" pattern="^SALE\d{4}$" placeholder="SALE2026">
+            <small>Format: SALE + 4 chữ số, ví dụ: SALE2026</small>
+
+            <div>
+                <label for="note">Ghi chú (tùy chọn):</label>
+                <br>
+                <textarea id="note" name="note" rows="4" cols="40" placeholder="Ghi chú cho người giao..."></textarea>
+            </div>
+        </form>
+    </section>
+
+    <section aria-labelledby="shipping-heading">
+        <h2 id="shipping-heading">Thông tin giao hàng</h2>
+        <form>
+            <label for="delivery-date">Ngày giao hàng mong muốn:</label>
+            <input type="date" id="delivery-date" name="delivery-date">
+
+            <br>
+            <label for="time-slot">Khung giờ:</label>
+            <select id="time-slot" name="time-slot">
+                <option value="morning">Sáng 8-12h</option>
+                <option value="afternoon">Chiều 14-18h</option>
+                <option value="evening">Tối 18-21h</option>
+            </select>
+
+            <br>
+            <label for="days-range">Thời gian giao hàng (số ngày): <span id="days-value">1</span></label>
+            <input type="range" id="days-range" name="days-range" min="1" max="7" step="1" value="1">
+        </form>
+    </section>
+
+    <section aria-labelledby="bonus-heading">
+        <h2 id="bonus-heading">Điểm tích lũy</h2>
+        <label for="loyalty">Mức tích lũy:</label>
+        <meter id="loyalty" min="0" max="1000" low="200" high="800" optimum="1000" value="450">450/1000</meter>
+        <progress id="progress-points" value="45" max="100"></progress>
+    </section>
+
+    <button type="submit" form="checkout-form" aria-label="Xác nhận đặt hàng">Xác nhận đặt hàng</button>
+</body>
+</html>
