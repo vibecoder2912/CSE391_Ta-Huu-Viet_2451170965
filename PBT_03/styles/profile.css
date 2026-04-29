@@ -1,0 +1,90 @@
+* { box-sizing: border-box; }
+
+/* Body / typography */
+body {
+	font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+	background-color: #f5f7fb;
+	color: #222;
+	line-height: 1.6;
+	margin: 0;
+}
+
+/* Header */
+header {
+	background: linear-gradient(90deg, #1e3c72 0%, #2a5298 100%);
+	color: #fff;
+	padding: 20px;
+}
+
+/* Navigation links: element, descendant and class selectors */
+nav a {
+	color: #e6f0ff;
+	text-decoration: none;
+	padding: 8px 12px;
+	display: inline-block;
+}
+
+nav a:hover {
+	color: #fff;
+	text-decoration: underline;
+}
+
+.active {
+	background-color: rgba(255,255,255,0.08);
+	border-radius: 4px;
+	color: #fff !important;
+}
+
+main {
+	padding: 24px;
+}
+
+aside {
+	background: #fff;
+	padding: 16px;
+	margin: 16px;
+	border-radius: 6px;
+}
+
+.skills table {
+	width: 100%;
+	border-collapse: collapse;
+	background: #fff;
+}
+
+.skills th,
+.skills td {
+	padding: 12px 10px;
+	border: 1px solid #e0e6ef;
+	text-align: left;
+}
+
+.skills thead th {
+	background-color: #0b3b6f;
+	color: #fff;
+}
+
+.skills tbody tr:nth-child(even) {
+	background-color: #f3f6fb;
+}
+
+.skills tbody tr:hover {
+	background-color: #e6f0ff;
+}
+
+footer {
+	background-color: #0b2746;
+	color: #cbd7ea;
+	text-align: center;
+	padding: 16px 12px;
+}
+
+#profile-pic {
+	max-width: 100%;
+	border-radius: 6px;
+}
+
+@media (min-width: 800px) {
+	main { max-width: 900px; margin: 0 auto; }
+}
+
