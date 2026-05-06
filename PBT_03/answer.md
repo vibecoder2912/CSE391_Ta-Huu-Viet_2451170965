@@ -74,3 +74,19 @@ B2:
 
 Hộp 1(content-box): 348.89px x 179.64px
 Hộp 2(border-box): 300px x 149.64px
+
+B3:
+Rules + specificity (từ cao đến thấp):
+
+p { color: #e74c3c; } — Specificity: 0,0,1
+div p { color: #e67e22; } — Specificity: 0,0,2
+section div p { color: #f1c40f; } — Specificity: 0,0,3
+.text { color: #2ecc71; } — Specificity: 0,1,0
+p.text { color: #1abc9c; } — Specificity: 0,1,1
+.text.highlight { color: #16a085; } — Specificity: 0,2,0
+p.text.highlight { color: #3498db; } — Specificity: 0,2,1
+#demo { color: #9b59b6; } — Specificity: 1,0,0
+p#demo { color: #8e44ad; } — Specificity: 1,0,1
+#demo.text { color: #2c3e50; } — Specificity: 1,1,0
+
+Element sẽ hiển thị màu #2c3e50 vì quy tắc #demo.text có specificity cao nhất (1,1,0). Thay đổi thứ tự các rules trong file CSS sẽ không đổi màu, trừ khi thay đổi selectors hoặc đưa một rule có cùng specificity nhưng xuất hiện sau #demo.text(thứ tự xuất hiện).
