@@ -69,3 +69,8 @@ Thêm style="color: orange;" → orange (inline style wins over stylesheet rules
 
 4:
 Nếu Rule A là p { color: black !important; } → black. Giải thích ngắn: !important trong stylesheet outrank(vượt quyền) non-!important rules (kể cả inline non-!important); giữa nhiều !important rules, specificity + source order sẽ quyết định.
+
+B2:
+
+Hộp 1(content-box): 348.89px x 179.64px
+Hộp 2(border-box): 300px x 149.64px
