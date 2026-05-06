@@ -109,3 +109,36 @@ Có hai cách sửa:
 Cách A (dùng border-box): đặt box-sizing: border-box cho các cột; khi đó width bao gồm padding + border. Giữ width: 300px và width: 660px sẽ khiến tổng = 300 + 660 = 960px đúng bằng container — layout không vỡ.
 
 Cách B (không dùng border-box): giữ box-sizing: content-box và giảm width của .content để bù cho padding + border. Ví dụ giữ .sidebar width 300 (thực tế 342), đặt .content content-width = 556px → thực tế content = 556 + 60 + 2 = 618; tổng = 342 + 618 = 960.
+
+
+C2:
+
+"Sản phẩm A" (h2.title.highlight): font-size = 20px; color = green (from .highlight !important).
+"Mô tả sản phẩm" (p inside #featured .card): color = blue (inherits from .card).
+"Sản phẩm B" (h2.title): font-size = 20px; color = blue (from .card).
+"Mô tả sản phẩm B" (p.highlight): color = green (from .highlight !important).
+
+Mô tả chi tiết (cascade + kế thừa):
+
+"Sản phẩm A" (<h2 class="title highlight"> trong #featured)
+font-size: 20px
+Giải thích: .card .title { font-size: 20px; } đặt trực tiếp trên thẻ h2, ghi đè giá trị kế thừa từ .container (14px) hay body (16px).
+
+color: green
+Giải thích: .highlight { color: green !important; } có !important(specificity = vô cực) nên ưu tiên hơn mọi khai báo bình thường (kể cả #featured .title { color: red; } hoặc .card { color: blue; }).
+
+
+"Mô tả sản phẩm" (thẻ p trong cùng div.card#featured)
+color: blue
+Giải thích: có rule .card p { color: inherit; } khiến p kế thừa màu từ phần tử cha .card. .card đặt color: blue; nên p nhận màu xanh. Màu của anh/chị em (h2) không ảnh hưởng vì thừa kế là từ cha, không phải từ anh/em.
+
+
+"Sản phẩm B" (<h2 class="title"> trong .card không có id)
+font-size: 20px
+Giải thích: như trên, .card .title { font-size: 20px; } áp dụng trực tiếp.
+color: blue
+Giải thích: không có quy tắc nào ưu tiên hơn .card { color: blue; } cho tiêu đề này, nên tiêu đề dùng màu từ .card.
+
+"Mô tả sản phẩm B" (<p class="highlight"> trong .card)
+color: green
+Giải thích: thẻ p có lớp highlight nên .highlight { color: green !important; } áp dụng trực tiếp; !important thắng mọi giá trị kế thừa hoặc khai báo bình thường.
