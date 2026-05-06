@@ -1,0 +1,65 @@
+.container {
+  width: 960px;
+  margin: 10px auto 30px;
+  background: #f8f8f8;
+  overflow: hidden;
+  border: 1px dashed #ccc;
+}
+
+.original .sidebar,
+.original .content {
+  box-sizing: content-box; /* mặc định */
+}
+.original .sidebar {
+  width: 300px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  float: left;
+  background: #eef;
+}
+.original .content {
+  width: 660px;
+  padding: 30px;
+  border: 1px solid #ccc;
+  float: left;
+  background: #efe;
+}
+
+/* Sửa lỗi bằng cách sử dụng box-sizing: border-box */
+.fix-a .sidebar,
+.fix-a .content {
+  box-sizing: border-box;
+}
+.fix-a .sidebar {
+  width: 300px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  float: left;
+  background: #ddf;
+}
+.fix-a .content {
+  width: 660px;
+  padding: 30px;
+  border: 1px solid #ccc;
+  float: left;
+  background: #dfd;
+}
+
+.fix-b .sidebar,
+.fix-b .content {
+  box-sizing: content-box;
+}
+.fix-b .sidebar {
+  width: 300px;      
+  padding: 20px;
+  border: 1px solid #ccc;
+  float: left;
+  background: #cde;
+}
+.fix-b .content {
+  width: 556px;      /* giảm để 556 + 60 + 2 = 618; 618 + 342 = 960 */
+  padding: 30px;
+  border: 1px solid #ccc;
+  float: left;
+  background: #cec;
+}

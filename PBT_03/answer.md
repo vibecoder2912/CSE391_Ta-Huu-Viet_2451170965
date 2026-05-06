@@ -90,3 +90,22 @@ p#demo { color: #8e44ad; } — Specificity: 1,0,1
 #demo.text { color: #2c3e50; } — Specificity: 1,1,0
 
 Element sẽ hiển thị màu #2c3e50 vì quy tắc #demo.text có specificity cao nhất (1,1,0). Thay đổi thứ tự các rules trong file CSS sẽ không đổi màu, trừ khi thay đổi selectors hoặc đưa một rule có cùng specificity nhưng xuất hiện sau #demo.text(thứ tự xuất hiện).
+
+C1:
+
+Chiều rộng thực tế (box-sizing: content-box)
+.sidebar: content width = 300px; padding = 20px left + 20px right = 40px; border = 1px + 1px = 2px
+→ Tổng thực tế = 300 + 40 + 2 = 342px
+.content: content width = 660px; padding = 30px + 30px = 60px; border = 1px + 1px = 2px
+→ Tổng thực tế = 660 + 60 + 2 = 722px
+Tổng 2 cột = 342 + 722 = 1064px > container 960px
+
+
+Tại sao layout bị vỡ:
+Vì .sidebar + .content thực tế chiếm 1064px, lớn hơn container 960px. Với sử dụng thuộc tính css float, khi không còn đủ không gian ngang cho phần tử float tiếp theo thì phần tử đó bị đẩy xuống dòng mới.
+
+
+Có hai cách sửa:
+Cách A (dùng border-box): đặt box-sizing: border-box cho các cột; khi đó width bao gồm padding + border. Giữ width: 300px và width: 660px sẽ khiến tổng = 300 + 660 = 960px đúng bằng container — layout không vỡ.
+
+Cách B (không dùng border-box): giữ box-sizing: content-box và giảm width của .content để bù cho padding + border. Ví dụ giữ .sidebar width 300 (thực tế 342), đặt .content content-width = 556px → thực tế content = 556 + 60 + 2 = 618; tổng = 342 + 618 = 960.

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Debug layout</title>
+  <link rel="stylesheet" href="styles/debug_layout.css">
+</head>
+<body>
+  <h2>Bản gốc (bị vỡ)</h2>
+  <div class="container original">
+    <aside class="sidebar">Sidebar (300 + 20px padding)</aside>
+    <main class="content">Content (660 + 30px padding)</main>
+  </div>
+
+  <h2>Cách A: sử dụng border-box</h2>
+  <div class="container fix-a">
+    <aside class="sidebar">Sidebar (300)</aside>
+    <main class="content">Content (660)</main>
+  </div>
+
+  <h2>Cách B: Chỉnh độ rộng (content-box)</h2>
+  <div class="container fix-b">
+    <aside class="sidebar">Sidebar (300)</aside>
+    <main class="content">Content (556)</main>
+  </div>
+</body>
+</html>
