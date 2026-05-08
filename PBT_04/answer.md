@@ -47,3 +47,16 @@ Text-art:
 Hàng 1: [1][2][3]
 Hàng 2: [4][5][6]
 Hàng 3: [7][ ][ ]
+
+
+C1:
+Navigation bar: Flexbox — dễ căn hàng ngang và phân phối không gian (justify-content, align-items) cho logo, menu, nút ở cùng một hàng.
+
+Instagram-like grid: Grid — tạo lưới cố định 3 cột đều nhau dễ dàng, responsive bằng auto-fill/minmax() khi số ảnh thay đổi.
+
+Blog (main + sidebar): Grid — bố cục hai cột chính tốt với grid-template-columns: 200px 1fr; kết hợp Flexbox bên trong các khu vực nếu cần căn hàng/ô.
+
+Footer 4 cột: Grid (hoặc Flexbox) — Grid cho bố cục cột ổn định và responsive; Flexbox có thể dùng nếu nội dung mỗi cột chỉ là hàng dọc đơn giản.
+
+Product card: Flexbox — dùng display: flex; flex-direction: column và margin-top: auto để đẩy nút xuống đáy card một cách ổn định.
+
