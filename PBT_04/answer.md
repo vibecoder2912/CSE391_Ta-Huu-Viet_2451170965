@@ -60,3 +60,72 @@ Footer 4 cột: Grid (hoặc Flexbox) — Grid cho bố cục cột ổn định
 
 Product card: Flexbox — dùng display: flex; flex-direction: column và margin-top: auto để đẩy nút xuống đáy card một cách ổn định.
 
+C2:
+
+Lỗi 1 — Cards không đều chiều cao / nút "Mua" nhảy
+
+Nguyên nhân: các .card có chiều cao khác nhau vì nội dung không được layout theo column flex; nút nằm theo flow làm vị trí thay đổi. Ngoài ra nếu parent .card-container cho phép item co lại, hàng khác nhau sẽ có chiều cao khác.
+Sửa (CSS):
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch; /* đảm bảo các item trên cùng 1 hàng cùng chiều cao */
+  gap: 16px;
+}
+
+.card {
+  box-sizing: border-box;
+  flex: 0 0 calc(33.333% - 16px); /* or width:30% as before */
+  display: flex;
+  flex-direction: column;
+  min-height: 320px; /* tuỳ chọn để đồng đều hơn */
+}
+
+/* phần chứa nội dung chính */
+.card .card-body {
+  flex: 1 1 auto; /* chiếm không gian để đẩy button xuống đáy */
+  display: flex;
+  flex-direction: column;
+}
+
+.card .btn {
+  margin-top: auto; /* giữ nút luôn dính đáy card */
+}
+
+
+Lỗi 2 — Item vẫn dính góc trái trên trong container 100vh
+
+Nguyên nhân: display:flex đặt nhưng không dùng justify-content/align-items; text-align:center chỉ căn giữa nội dung inline, không căn flex child.
+Sửa (CSS):
+.hero {
+  height: 100vh;
+  display: flex;
+  justify-content: center; /* căn ngang */
+  align-items: center;     /* căn dọc */
+  padding: 20px;           /* phòng trường hợp nội dung quá gần cạnh */
+  text-align: center;      /* giữ cho text bên trong căn giữa */
+}
+
+
+Lỗi 3 — Sidebar bị co lại khi content quá dài
+
+Nguyên nhân: flex items có thể bị shrink; .content mặc định có min-width: auto và có thể ép sidebar khi nội dung overflow. Cần cố định độ rộng sidebar và cho content có min-width:0 để cho phép scroll nội dung thay vì làm co sidebar.
+Sửa (CSS):
+.layout {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+/* sidebar cố định kích thước, không shrink */
+.sidebar {
+  flex: 0 0 250px; /* không co, không lớn */
+  width: 250px;
+}
+
+/* content được phép co/scroll nội dung mà không ép sidebar */
+.content {
+  flex: 1 1 auto;
+  min-width: 0; /* VERY IMPORTANT để nội dung bên trong không ép flex parent */
+  overflow: auto; /* nếu cần scroll bên trong */
+}
