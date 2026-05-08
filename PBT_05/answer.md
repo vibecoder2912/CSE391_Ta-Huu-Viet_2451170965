@@ -30,4 +30,15 @@ sm: ≥576px — điện thoại lớn / điện thoại ngang — product grid:
 md: ≥768px — tablet (iPad vertical) — product grid: 2–3 cột (thường 2 trên tablet)
 lg: ≥992px — laptop nhỏ — product grid: 3 cột
 xl: ≥1200px — desktop tiêu chuẩn — product grid: 4 cột
-xxl: ≥1400px — desktop lớn / wide — product grid: 4–5 cột (tuỳ thiết kế)    
+xxl: ≥1400px — desktop lớn / wide — product grid: 4–5 cột (tuỳ thiết kế)
+
+
+A3:
+
+CSS quy định: mặc định width:100%; sau đó override ở min-width tương ứng.
+
+375px (iPhone SE) → .container = 100%
+600px → .container = 540px (vì >=576px và <768px)
+800px → .container = 720px (vì >=768px và <992px)
+1000px → .container = 960px (vì >=992px và <1200px)
+1400px → .container = 1140px (vì >=1200px)
