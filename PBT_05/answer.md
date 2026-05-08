@@ -22,3 +22,12 @@ Desktop‑First:
 }
 
 Tại sao Mobile‑First được khuyên dùng: giảm CSS tải cho mobile, khuyến khích ưu tiên nội dung, tương thích với min-width media queries và tốt cho performance / SEO.
+
+
+A2:
+xs (mobile): <576px — điện thoại nhỏ (iPhone SE) — product grid: 1 cột
+sm: ≥576px — điện thoại lớn / điện thoại ngang — product grid: 2 cột
+md: ≥768px — tablet (iPad vertical) — product grid: 2–3 cột (thường 2 trên tablet)
+lg: ≥992px — laptop nhỏ — product grid: 3 cột
+xl: ≥1200px — desktop tiêu chuẩn — product grid: 4 cột
+xxl: ≥1400px — desktop lớn / wide — product grid: 4–5 cột (tuỳ thiết kế)    
