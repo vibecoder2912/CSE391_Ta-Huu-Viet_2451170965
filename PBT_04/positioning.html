@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Positioning Playground</title>
+  <link rel="stylesheet" href="style/positioning.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">SHOP</div>
+      <nav class="nav">
+        <a href="#">Trang chủ</a>
+        <a href="#">Sản phẩm</a>
+        <a href="#">Giới thiệu</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page">
+    <aside class="sidebar">
+      <div class="sticky">
+        <h3>Bộ lọc</h3>
+        <p>Nội dung sẽ dính vào vị trí nhất định khi cuộn.</p>
+        <ul>
+          <li><input type="checkbox" /> Lựa chọn 1</li>
+          <li><input type="checkbox" /> Lựa chọn 2</li>
+          <li><input type="checkbox" /> Lựa chọn 3</li>
+        </ul>
+      </div>
+    </aside>
+
+    <section class="content">
+      <div class="cards">
+        <article class="card">
+          <div class="badge">Sale</div>
+          <img src="https://via.placeholder.com/600x300" alt="Product" />
+          <h4>Product 1</h4>
+          <p>Short description</p>
+          <button class="buy">Buy</button>
+        </article>
+
+        <article class="card">
+          <div class="badge">Sale</div>
+          <img src="https://via.placeholder.com/600x300" alt="Product" />
+          <h4>Product 2</h4>
+          <p>Short description</p>
+          <button class="buy">Buy</button>
+        </article>
+
+        <article class="card">
+          <div class="badge">Sale</div>
+          <img src="https://via.placeholder.com/600x300" alt="Product" />
+          <h4>Product 3</h4>
+          <p>Short description</p>
+          <button class="buy">Buy</button>
+        </article>
+      </div>
+
+      <div style="height:1200px"></div>
+    </section>
+  </main>
+
+  <button class="to-top" aria-label="Scroll to top">↑</button>
+</body>
+</html>

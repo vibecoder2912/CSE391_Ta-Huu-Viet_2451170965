@@ -1,0 +1,96 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+.container { max-width: 1100px; margin: 0 auto; padding: 0 16px; }
+
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: #222;
+  color: #fff;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+.header-inner { display: flex; align-items: center; justify-content: space-between; width: 100%; }
+.logo { font-weight: 700; }
+.nav a { color: #fff; margin-left: 16px; text-decoration: none; }
+.nav a:hover { text-decoration: underline; }
+
+.page {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 100px 16px 40px
+}
+
+.sidebar .sticky {
+  position: sticky;
+  top: 80px;
+  background: #f7f7f7;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #e0e0e0;
+}
+
+.cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; align-items: start; }
+.card {
+  position: relative; /* for badge */
+  background: #fff;
+  border: 1px solid #e6e6e6;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  min-height: 320px;
+}
+.card img { width: 100%; height: auto; display: block; border-radius: 4px; }
+.card h4 { margin-top: 8px; }
+.card p { margin-top: 6px; color: #555; flex: 0 0 auto; }
+.card .buy { margin-top: auto; padding: 10px 12px; background: #007bff; color: #fff; border: none; border-radius: 4px; cursor: pointer; }
+
+.badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #e3342f;
+  color: #fff;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-weight: 700;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+/* Scroll to top button (fixed) */
+.to-top {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #111;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+}
+
+@media (max-width: 800px) {
+  .page { grid-template-columns: 1fr; padding-top: 90px; }
+  .cards { grid-template-columns: 1fr; }
+  .sidebar .sticky { position: static; top: auto; margin-bottom: 12px; }
+}
+
+.sticky li{
+    list-style: none;
+}
