@@ -84,3 +84,8 @@ npx sass --watch scss/main.scss css/main.css
 Hoặc dùng VS Code extension: Live Sass Compiler → bật Watch Sass.
 Trong build tool (Vite/webpack/Create React App) chỉ cần cài sass.
 Đưa file CSS đã compile vào HTML: <link rel="stylesheet" href="css/main.css">.
+
+B3:
+Lệnh compile:
+npm install -D sass
+npx sass scss/style.scss style/style.css

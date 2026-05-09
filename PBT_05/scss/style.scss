@@ -1,0 +1,6 @@
+@import 'variables';
+@import 'mixins';
+@import 'components';
+
+/* optional small helpers or overrides */
+img { max-width: 100%; height: auto; display: block; }

@@ -1,0 +1,21 @@
+// Responsive helper (mobile-first)
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == tablet {
+    @media (min-width: $breakpoint-tablet) { @content; }
+  } @else if $breakpoint == desktop {
+    @media (min-width: $breakpoint-desktop) { @content; }
+  }
+}
+
+// Flex centering
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// Reusable card shadow + transition
+@mixin card-shadow {
+  box-shadow: 0 8px 20px rgba(12,28,56,0.08);
+  transition: transform .28s ease, box-shadow .28s ease;
+}
