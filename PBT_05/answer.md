@@ -89,3 +89,46 @@ B3:
 Lệnh compile:
 npm install -D sass
 npx sass scss/style.scss style/style.css
+
+C1:
+Navigation thay đổi:
+
+375px (mobile): Header gọn — chỉ còn logo + search; menu chính được rút gọn/biểu tượng (tab bar) ở đáy màn hình thay cho menu ngang. Không có thanh menu ngang đầy đủ.
+768px (tablet): Header vẫn giữ search lớn, menu chính không hiện đầy đủ như desktop — giao diện vẫn ưu tiên hero và thanh tìm kiếm. (Một số item menu có thể hiện ở dạng icon/thu gọn).
+1440px (desktop): Header rộng hơn, không gian cho nhiều elements; menu/hyperlinks có thể hiển thị rõ hơn trên cùng (desktop cho 
+phép nav đầy đủ hoặc nhiều action visible).
+
+Lưới content (số cột):
+
+375px: Nội dung chính xếp dọc — 1 cột (hero full‑width, các ô/biểu tượng dạng hàng ngang cuộn hoặc grid 1 cột).
+
+768px: Vẫn thiên về 1 cột cho phần hero/ảnh banner, nhưng các block con (cards) có không gian hơn — thường chuyển sang 2 cột cho các gallery hoặc product grid nhỏ (tuỳ section).
+1440px: Layout rộng, các vùng product/gallery chuyển thành nhiều cột (thường 3–4 cột) hoặc show nhiều item trên cùng một hàng.
+
+Elements bị ẩn/thu gọn trên mobile:
+
+Sidebar, ads, thanh menu dài, nhiều link phụ — bị ẩn hoặc chuyển vào menu ẩn.
+Các badge, thông tin phụ, nhiều control UI (filters, toolbar) thường được ẩn hoặc đặt vào menu collapse.
+Trên mobile có thêm bottom tab (quick actions) thay cho menu ngang desktop.
+
+Font size có thay đổi không:
+
+Có xu hướng tăng nhẹ trên tablet/desktop (desktop dùng base font lớn hơn để tận dụng không gian). Ảnh cho thấy kích thước chữ tiêu đề/placeholder search lớn hơn rõ trên desktop/tablet, nhưng body text vẫn tỷ lệ tương tự — kết luận: có scale font theo breakpoint (nhẹ), không thay đổi quá mạnh.
+
+C2:
+Wireframe (text-art, mô tả)
+
+Mobile (≤ 767px)
+
+Thứ tự dọc: Header (logo + phone) → Hero (full-width) → Gallery (1 cột, 6 ảnh) → Reservation form (ở dưới hero hoặc trước gallery — đặt ngay trong flow) → Map (thu gọn hoặc ẩn/hiển thị qua nút) → Footer
+Ẩn/thu gọn: Sidebar/ads không hiển thị; map có thể ẩn hoặc collapse thành nút "Xem bản đồ".
+Tablet (768px – 1023px)
+
+Thứ tự: Header → Hero → Reservation form (ngang, có thể ở trên cùng của main) → Gallery (2 cột) → Map (bên dưới hoặc cạnh reservation nếu đủ rộng) → Footer
+Hiển thị form như block ngang; map có thể nằm sau gallery hoặc bên cạnh form (tùy chiều rộng).
+Desktop (≥ 1024px)
+
+Bố cục 3 cột chính: Sidebar (left, bộ lọc/Thông tin đặt bàn 250px) | Main (center: Hero + Gallery grid 3 cột) | Map/Ads (right, 250px)
+Header và Footer span full width; hero span full width top của main; featured/hero có thể lớn hơn; reservation form có thể làm sticky trong sidebar.
+
+

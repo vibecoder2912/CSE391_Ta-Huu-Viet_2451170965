@@ -1,0 +1,108 @@
+:root {
+  --gap: 16px;
+  --max-w: 1200px;
+  --sidebar-w: 250px;
+}
+
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,Arial,sans-serif;line-height:1.4}
+
+.site {
+  display: block;
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 var(--gap);
+}
+
+.header {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.hero {
+  width:100%;
+  height: 40vh;
+  margin: var(--gap) 0;
+  background-size: cover;
+  background-position: center;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--gap);
+}
+
+.reservation {
+  background:#fff;
+  padding:12px;
+  border-radius:8px;
+  border:1px solid #eee;
+}
+
+.gallery {
+  display:grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+.gallery img { width:100%; height:auto; display:block; object-fit:cover; }
+
+.map {
+  width:100%;
+  height: 220px;
+  background:#ddd;
+  border-radius:8px;
+}
+
+.footer {
+  margin-top: var(--gap);
+  padding: 16px 0;
+  border-top: 1px solid #eee;
+  text-align:center;
+}
+
+@media (min-width: 768px) {
+  html { font-size: 17px; }
+
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .reservation-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .map { height: 320px; }
+}
+
+@media (min-width: 1024px) {
+  html { font-size: 18px; }
+
+  .site {
+    display: grid;
+    grid-template-columns: var(--sidebar-w) 1fr var(--sidebar-w);
+    grid-template-rows: auto auto 1fr auto;
+    grid-template-areas:
+      "header header header"
+      "hero hero hero"
+      "sidebar main map"
+      "footer footer footer";
+    gap: 24px;
+  }
+
+  .header { grid-column: 1 / -1; grid-area: header; }
+  .hero   { grid-area: hero; height: 48vh; margin: 0; }
+  .sidebar{ grid-area: sidebar; display:block; }
+  .main   { grid-area: main; display:block; }
+  .map    { grid-area: map; height: auto; }
+  .footer { grid-area: footer; }
+
+  .gallery { grid-template-columns: repeat(3, 1fr); gap: 20px; }
+
+  .sidebar .reservation { position: sticky; top: 100px; }
+}
