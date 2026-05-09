@@ -42,3 +42,45 @@ CSS quy định: mặc định width:100%; sau đó override ở min-width tươ
 800px → .container = 720px (vì >=768px và <992px)
 1000px → .container = 960px (vì >=992px và <1200px)
 1400px → .container = 1140px (vì >=1200px)
+
+A4:
+
+Variables: Cho phép khai báo giá trị tái sử dụng (compile-time). 
+Ví dụ:
+$primary-color: #2563eb;
+.btn { background: $primary-color; color: #fff; }
+
+
+Nesting: Viết selector lồng nhau theo cấu trúc HTML, giảm lặp selector dài.
+Ví dụ:
+.card {
+  .title { font-size: 1rem; }
+  &:hover { box-shadow: 0 6px 18px rgba(0,0,0,0.08); }
+}
+
+Mixins (@mixin / @include): Định nghĩa khối CSS có thể tái sử dụng, có tham số.
+Ví dụ:
+@mixin flex-center { display:flex; justify-content:center; align-items:center; }
+.modal { @include flex-center; }
+
+@extend / Inheritance: Cho phép một selector kế thừa toàn bộ rule từ selector khác, tránh lặp.
+Ví dụ:
+.btn-base { padding:8px 12px; border-radius:6px; }
+.btn-primary { @extend .btn-base; background:#2563eb; color:#fff; }
+
+
+
+Tại sao trình duyệt KHÔNG đọc *.scss?
+
+SCSS là ngôn ngữ tiền xử lý (source) — browser chỉ hiểu CSS. Cần biên dịch (compile) SCSS → CSS trước khi phục vụ.
+Các bước chuyển SCSS → CSS (ngắn gọn):
+
+Cài tool/compiler (ví dụ sass):
+npm install -D sass
+npx sass scss/main.scss css/main.css
+npx sass --watch scss/main.scss css/main.css
+
+
+Hoặc dùng VS Code extension: Live Sass Compiler → bật Watch Sass.
+Trong build tool (Vite/webpack/Create React App) chỉ cần cài sass.
+Đưa file CSS đã compile vào HTML: <link rel="stylesheet" href="css/main.css">.
