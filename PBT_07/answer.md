@@ -97,3 +97,30 @@ var html = `
     <span>Giá: ${price}đ</span>
 </div>
 `;
+
+Câu C1:
+
+Lỗi gán thay vì so sánh:
+
+Code: if (giaSauGiam = 0) { ... }
+Vấn đề: Dùng phép gán = thay vì so sánh → luôn gán 0 và điều kiện sai lệch.
+Sửa: if (giaSauGiam === 0) { ... }
+Input giaBan có thể là chuỗi nên phép toán không đúng:
+
+Test dùng "100000" → phép tính với string có thể trả về NaN hoặc nối chuỗi.
+Sửa: Chuyển giaBan về số trước khi tính: const price = Number(giaBan); if (isNaN(price)) return "Lỗi: Input không phải số";
+Không xử lý kiểu dữ liệu cho phanTramGiam:
+
+Nếu truyền string hoặc NaN cần validate.
+Sửa: const pct = Number(phanTramGiam); if (isNaN(pct)) return "Lỗi: Phần trăm không hợp lệ";
+Không có dấu chấm câu/format, nhưng quan trọng là xử lý lỗi đầu vào:
+
+Thêm return/throw phù hợp khi gặp input không hợp lệ.
+Lỗi "ẩn" về var trong vòng lặp và setTimeout:
+
+Code dùng for (var i=0; i<5; i++) { setTimeout(function(){ console.log("Item " + i) },1000) }
+Vấn đề: var có function-scope → khi callback chạy, i đã là 5 → in Item 5 nhiều lần.
+Sửa: Dùng let i (block-scope) hoặc tạo closure: for (let i = 0; i < 5; i++) { ... }
+Thiếu xử lý khi phanTramGiam ngoài [0,100] — hiện code trả về chuỗi nhưng nên rõ ràng:
+
+Giữ return "Phần trăm giảm không hợp lệ"; là OK nhưng ghi rõ kiểu trả về.
