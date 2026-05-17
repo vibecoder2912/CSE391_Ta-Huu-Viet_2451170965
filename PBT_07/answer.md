@@ -58,3 +58,42 @@ NaN == NaN → false
 0 === false → false
 "" == false → true
 Quy tắc: Nên dùng === (strict equality) để tránh kết quả bất ngờ do type coercion; chỉ dùng == khi hiểu rõ cơ chế ép kiểu và cần hành vi đó.
+
+A4:
+
+Các giá trị faulsy trong JavaScript:
+false
+0 và -0
+0n (BigInt zero)
+"" (empty string)
+null
+undefined
+NaN
+
+Dự đoán cho đoạn if:
+
+if ("0") console.log("A"); → In (truthy)
+if ("") console.log("B"); → Không in (falsy)
+if ([]) console.log("C"); → In (mảng rỗng là truthy)
+if ({}) console.log("D"); → In (object là truthy)
+if (null) console.log("E"); → Không in (falsy)
+if (0) console.log("F"); → Không in (falsy)
+if (-1) console.log("G"); → In (non-zero số là truthy)
+if (" ") console.log("H"); → In (chuỗi chứa space là truthy)
+
+A5:
+
+Cách 1:
+var greeting = `Xin chào ${name}! Bạn ${age} tuổi.`;
+
+Cách 2:
+var url = `https://api.example.com/users/${userId}/orders?page=${page}`;
+
+Cách 3:
+var html = `
+<div class="card">
+    <h2>${title}</h2>
+    <p>${description}</p>
+    <span>Giá: ${price}đ</span>
+</div>
+`;
