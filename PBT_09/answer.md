@@ -45,3 +45,16 @@ const userInput = document.querySelector("#search").value;
 document.querySelector("#result").textContent = userInput; -> textContent sẽ hiển thị nguyên văn, không thực thi HTML hay script.
 
 Nếu cần format riêng, hãy tạo element bằng createElement rồi gán textContent, thay vì nhét chuỗi HTML thẳng vào innerHTML.
+
+A3:
+A3 - Event Bubbling
+
+Khi click vào button, thứ tự log là:
+BUTTON
+INNER
+OUTER
+Vì event bubble từ phần tử con lên cha: button → #inner → #outer.
+
+Nếu bỏ comment e.stopPropagation(), output chỉ còn:
+BUTTON
+Vì stopPropagation() chặn event không cho tiếp tục lan lên các phần tử cha.
