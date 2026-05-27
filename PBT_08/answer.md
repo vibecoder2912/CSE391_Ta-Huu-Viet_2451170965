@@ -48,3 +48,30 @@ console.log(tinhThueArrow(12000000)); // ReferenceError: Cannot access 'tinhThue
 
 const tinhThueArrow = (luong) => luong * 0.1;
 
+A2:
+
+Đoạn 1:
+1
+2
+3
+2
+2
+
+Đoạn 2:
+var: 3
+var: 3
+var: 3
+let: 0
+let: 1
+let: 2
+
+A3:
+
+nums.filter(n => n % 2 === 0)
+nums.map(n => n * 3)
+nums.reduce((a, b) => a + b, 0)
+nums.find(n => n > 7)
+nums.some(n => n > 10)
+nums.every(n => n > 0)
+nums.map(n => `Số ${n}: ${n % 2 === 0 ? 'chẵn' : 'lẻ'}`)
+nums.slice().reverse() (không mutate mảng gốc)
