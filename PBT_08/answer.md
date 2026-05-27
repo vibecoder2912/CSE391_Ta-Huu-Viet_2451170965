@@ -75,3 +75,24 @@ nums.some(n => n > 10)
 nums.every(n => n > 0)
 nums.map(n => `Số ${n}: ${n % 2 === 0 ? 'chẵn' : 'lẻ'}`)
 nums.slice().reverse() (không mutate mảng gốc)
+
+
+A4:
+
+console.log(name, price, ram, color); →
+iPhone 16 25990000 8 Titan
+
+console.log(specs); →
+ReferenceError: specs is not defined
+(vì destructuring specs: { ram, color } không tạo biến specs—chỉ tạo ram và color.)
+
+Sau spread:
+
+console.log(updated.price); → 23990000
+console.log(updated.sale); → true
+console.log(product.price); → 25990000 (gốc không đổi)
+
+Spread gotcha:
+Sau const copy = { ...product }; copy.specs.ram = 16;
+console.log(product.specs.ram); → 16
+Giải thích ngắn: spread tạo shallow copy — thuộc tính specs (object) vẫn tham chiếu cùng một object, nên thay đổi nested object ảnh hưởng lên cả hai.
