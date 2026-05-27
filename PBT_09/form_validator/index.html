@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Validator</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <main class="page">
+        <section class="card">
+            <header class="header">
+                <h1>Đăng ký tài khoản</h1>
+                <p>Validation real-time bằng JavaScript</p>
+            </header>
+
+            <form id="registerForm" novalidate>
+                <div class="field">
+                    <label for="name">Tên</label>
+                    <div class="input-wrap">
+                        <input id="name" name="name" type="text" placeholder="Nguyễn Văn A" />
+                        <span id="nameStatus" class="status"></span>
+                    </div>
+                    <small id="nameError" class="error"></small>
+                </div>
+
+                <div class="field">
+                    <label for="email">Email</label>
+                    <div class="input-wrap">
+                        <input id="email" name="email" type="email" placeholder="name@example.com" />
+                    </div>
+                    <small id="emailError" class="error"></small>
+                </div>
+
+                <div class="field">
+                    <label for="password">Password</label>
+                    <div class="input-wrap">
+                        <input id="password" name="password" type="password" placeholder="Nhập password" />
+                    </div>
+                    <div class="meter">
+                        <div id="strengthBar" class="meter-bar"></div>
+                    </div>
+                    <small id="passwordHint" class="hint"></small>
+                </div>
+
+                <div class="field">
+                    <label for="confirmPassword">Confirm password</label>
+                    <div class="input-wrap">
+                        <input id="confirmPassword" name="confirmPassword" type="password"
+                            placeholder="Nhập lại password" />
+                    </div>
+                    <small id="confirmError" class="error"></small>
+                </div>
+
+                <div class="field">
+                    <label for="phone">Phone</label>
+                    <div class="input-wrap">
+                        <input id="phone" name="phone" type="text" placeholder="0901-234-567" inputmode="numeric" />
+                    </div>
+                    <small id="phoneError" class="error"></small>
+                </div>
+
+                <button id="submitBtn" type="submit" disabled>Đăng ký</button>
+            </form>
+        </section>
+    </main>
+
+    <div id="modalOverlay" class="modal-overlay" hidden>
+        <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+            <h2 id="modalTitle">Đăng ký thành công!</h2>
+            <div id="modalBody" class="modal-body"></div>
+            <button id="closeModalBtn" type="button">Đóng</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
