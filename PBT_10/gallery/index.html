@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infinite Scroll Gallery</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="bg-light">
+
+    <div class="container py-4">
+        <div class="text-center mb-5">
+            <h1 class="fw-bold text-dark"><i class="fa-solid fa-images text-primary me-2"></i>Photo Gallery</h1>
+            <p class="text-muted">Infinite Scroll • Lazy Loading Images • Bootstrap 5 Responsive Grid</p>
+        </div>
+
+        <div id="gallery-grid" class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4">
+        </div>
+
+        <div id="load-trigger" class="d-flex align-items-center justify-content-center mt-4">
+            <div id="loading-indicator" class="text-primary fw-semibold">
+                <div class="spinner-border spinner-border-sm me-2" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                Đang tải thêm ảnh mới...
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="lightboxModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content bg-transparent border-0 shadow-none position-relative">
+                <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3 z-3"
+                    data-bs-dismiss="modal" aria-label="Close"></button>
+                <div class="modal-body p-0 text-center">
+                    <img id="lightbox-img" src="" class="img-fluid rounded shadow" alt="Phóng to ảnh">
+                    <p id="lightbox-author" class="text-white mt-2 fs-5 fw-medium"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
