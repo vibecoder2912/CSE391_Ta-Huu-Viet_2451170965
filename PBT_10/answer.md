@@ -27,3 +27,37 @@ response.json() — trả về Promise vì parsing JSON có thể bất đồng 
 
 4:
 try...catch — bắt các lỗi runtime: network errors (DNS, no-connection), exceptions khi parsing JSON (malformed JSON), hoặc lỗi do chúng ta throw (ví dụ 4xx/5xx khi !response.ok).  fetch không reject cho HTTP errors (200–599) — chỉ reject cho network failure hoặc CORS.
+
+A3:
+
+Sơ đồ trạng thái (miêu tả):
+
+Pending → Fulfilled (resolve with value)
+Pending → Rejected (reject with reason)
+Callback Hell (ví dụ 4 cấp):
+callback1(arg, (err, res1) => {
+if (err) return handleErr(err);
+callback2(res1, (err, res2) => {
+if (err) return handleErr(err);
+callback3(res2, (err, res3) => {
+if (err) return handleErr(err);
+callback4(res3, (err, res4) => {
+if (err) return handleErr(err);
+console.log('Done', res4);
+});
+});
+});
+});
+
+Refactor thành async/await:
+async function run() {
+try {
+const res1 = await promiseCallback1();
+const res2 = await promiseCallback2(res1);
+const res3 = await promiseCallback3(res2);
+const res4 = await promiseCallback4(res3);
+console.log('Done', res4);
+} catch (err) {
+handleErr(err);
+}
+}
